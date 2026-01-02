@@ -1,65 +1,86 @@
-import Image from "next/image";
+import Image from "next/image"
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <div>
+      {/* Hero Section */}
+      <h1 className="text-3xl text-white font-bold md:text-4xl">
+        HI THERE!
+      </h1>
+
+      <h1 className="text-5xl text-white font-bold md:text-6xl lg:text-8xl">
+        I'M MATTHEW
+      </h1>
+
+      <div className="bg-white mt-3 inline-block">
+        <h5 className="text-base text-cyan-900 font-bold md:text-xl lg:text-2xl px-3">
+          FULL-STACK DEVELOPMENT ENTHUSIAST
+        </h5>
+      </div>
+
+      <div className="my-6">
+        <p className="text-white text-justify">
+          Hi, I'm Matthew! I'm a third-year Informatics student at Petra Christian University with a strong interest in full-stack development. I have hands-on experience building web applications using Laravel and Next.js, and mobile applications with Flutter. I'm passionate about creating efficient, scalable, and user-friendly applications, and I'm eager to expand my knowledge and expertise through internships and work opportunities.
+        </p>
+      </div>
+
+      {/* What I Do */}
+      <h1 className="text-3xl text-white font-bold md:text-4xl">
+        What I Do?
+      </h1>
+
+      <div className="flex flex-wrap my-3 items-stretch justify-center">
+        {/* Frontend */}
+        <ServiceCard
+          image="/images/website.svg"
+          title="Frontend Developer"
+          description="I have a strong command of modern web technologies, including HTML, CSS, and JavaScript. I excel in creating responsive and visually appealing user interfaces (UI) that enhance user experience across various devices."
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+
+        {/* Backend */}
+        <ServiceCard
+          image="/images/database.svg"
+          title="Backend Developer"
+          description="I have a strong foundation in server-side programming and database management. I am proficient in various programming languages such as PHP, Java, and Python, enabling me to design and implement efficient APIs and robust server architectures."
+        />
+
+        {/* QA */}
+        <ServiceCard
+          image="/images/quality.svg"
+          title="Quality Assurance"
+          description="I am passionate about ensuring the highest standards of quality in software development. I possess a strong understanding of testing methodologies, including manual and automated testing, and I excel in identifying defects and areas for improvement."
+        />
+      </div>
     </div>
-  );
+  )
+}
+
+function ServiceCard({
+  image,
+  title,
+  description,
+}: {
+  image: string
+  title: string
+  description: string
+}) {
+  return (
+    <div className="basis-full lg:basis-1/3 p-2 flex justify-center">
+      <div className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow h-full">
+        <Image
+          src={image}
+          alt={title}
+          width={128}
+          height={128}
+          className="mx-auto mb-2"
+        />
+        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+          {title}
+        </h5>
+        <p className="font-normal text-gray-700 text-justify">
+          {description}
+        </p>
+      </div>
+    </div>
+  )
 }
