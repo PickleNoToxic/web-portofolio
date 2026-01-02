@@ -1,3 +1,5 @@
+import { Printer, UsersRound, Wrench } from "lucide-react"
+
 export default function AboutPage() {
   return (
     <>
@@ -8,10 +10,23 @@ export default function AboutPage() {
         </h1>
       </div>
 
+      {/* TECHNICAL SKILLS */}
+      <h1 className="flex items-center gap-2 text-3xl text-white font-bold md:text-4xl mt-6 mb-3">
+        TECHNICAL SKILLS
+        <Wrench className="w-10 h-10 ml-2" />
+      </h1>
+
+      <SkillBar label="Web Development" percent={95} />
+      <SkillBar label="Mobile App Development" percent={85} />
+      <SkillBar label="Database Management" percent={85} />
+      <SkillBar label="Applied Artificial Intelligence" percent={75} />
+
+      <hr className="my-6 border-white" />
+
       {/* SOFT SKILLS */}
-      <h1 className="text-3xl text-white font-bold md:text-4xl mb-3">
+      <h1 className="flex items-center gap-2 text-3xl text-white font-bold md:text-4xl mt-6 mb-3">
         SOFT SKILLS
-        <i className="fa fa-users ml-2" aria-hidden="true"></i>
+        <UsersRound className="w-10 h-10 ml-2" />
       </h1>
 
       <SkillBar label="Problem Solving" percent={95} />
@@ -23,23 +38,10 @@ export default function AboutPage() {
 
       <hr className="my-6 border-white" />
 
-      {/* TECHNICAL SKILLS */}
-      <h1 className="text-3xl text-white font-bold md:text-4xl mt-6 mb-3">
-        TECHNICAL SKILLS
-        <i className="fa fa-wrench ml-2" aria-hidden="true"></i>
-      </h1>
-
-      <SkillBar label="Web Development" percent={85} />
-      <SkillBar label="Database Management" percent={95} />
-      <SkillBar label="Mobile App Development" percent={70} />
-      <SkillBar label="Machine Learning Operations" percent={80} />
-
-      <hr className="my-6 border-white" />
-
       {/* DIGITAL SKILLS */}
-      <h1 className="text-3xl text-white font-bold md:text-4xl mt-6 mb-3">
+      <h1 className="flex items-center gap-2 text-3xl text-white font-bold md:text-4xl mt-6 mb-3">
         DIGITAL SKILLS
-        <i className="fa fa-print ml-2" aria-hidden="true"></i>
+        <Printer className="w-10 h-10 ml-2" />
       </h1>
 
       <SkillBar label="Microsoft Word" percent={85} />
