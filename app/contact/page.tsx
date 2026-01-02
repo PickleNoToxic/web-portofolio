@@ -19,12 +19,11 @@ export default function ContactPage() {
         </p>
 
         <p className="text-white mt-3">
-          I am available for contact in the <b>late afternoon</b> to{" "}
-          <b>evening</b> and <b>before 8 AM</b> on <b>weekdays</b>, or whenever
-          I’m not busy. Please feel free to reach out on <b>weekends</b> or{" "}
-          <b>public holidays</b>, as I am <b>free all day</b> during those
-          times. Apologies in advance if my response is a bit slow. Here is my
-          contact information for your convenience.
+          Feel free to <b>reach out </b>to me <b>anytime</b> through any of the contact
+          options provided below. I’m always happy to connect and will do my
+          best to respond as quickly as possible. Apologies in advance if my
+          response is a bit slow. Here is my contact information for your
+          convenience.
         </p>
 
         {/* Contact List */}
