@@ -11,7 +11,7 @@ function SocialButton({ href = "#", Icon }: SocialButtonProps) {
   return (
     <button
       onClick={() => window.open(href, "_blank")}
-      className="bg-white shadow-lg h-10 w-10 flex items-center justify-center rounded-full outline-none hover:bg-black hover:text-white transition cursor-pointer"
+      className="bg-white shadow-lg h-10 w-10 flex items-center justify-center rounded-full outline-none hover:bg-cyan-800 hover:text-white transition cursor-pointer"
       type="button"
     >
       <Icon className="w-5 h-5" />

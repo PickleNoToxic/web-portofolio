@@ -1,4 +1,4 @@
-import { Printer, UsersRound, Wrench } from "lucide-react"
+import { Laptop, UsersRound, Wrench } from "lucide-react"
 
 export default function AboutPage() {
   return (
@@ -41,7 +41,7 @@ export default function AboutPage() {
       {/* DIGITAL SKILLS */}
       <h1 className="flex items-center gap-2 text-3xl text-white font-bold md:text-4xl mt-6 mb-3">
         DIGITAL SKILLS
-        <Printer className="w-10 h-10 ml-2" />
+        <Laptop className="w-10 h-10 ml-2" />
       </h1>
 
       <SkillBar label="Microsoft Word" percent={85} />

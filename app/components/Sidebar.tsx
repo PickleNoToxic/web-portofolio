@@ -15,7 +15,7 @@ export default function Sidebar() {
       {/* Header */}
       <div className="flex-shrink-0 px-8 py-4 flex items-center justify-between">
         <span className="text-lg font-semibold tracking-widest text-gray-900 uppercase">
-          Biodataku
+          Matthew Kevin
         </span>
 
         <button
@@ -40,7 +40,7 @@ export default function Sidebar() {
             />
             <div>
               <h2 className="font-medium text-sm text-center text-cyan-900">
-                Matthew Kevin
+                Full-Stack Developer
               </h2>
             </div>
           </div>

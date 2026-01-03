@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Layers } from "lucide-react";
 
 export default function HomePage() {
   return (
@@ -29,7 +30,10 @@ export default function HomePage() {
       </div>
 
       {/* Tech Stack */}
-      <h1 className="text-3xl text-white font-bold md:text-4xl">Tech Stack</h1>
+      <h1 className="flex items-center gap-2 text-3xl text-white font-bold md:text-4xl">
+        TECH STACK
+        <Layers className="w-10 h-10 ml-2" />
+      </h1>
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 my-6">
         <TechStackItem image="/images/laravel.svg" title="Laravel" />
@@ -64,7 +68,7 @@ export default function HomePage() {
 
 function TechStackItem({ image, title }: { image: string; title: string }) {
   return (
-    <div className="flex flex-col items-center justify-center p-5 bg-white/90 rounded-2xl shadow hover:-translate-y-1 hover:shadow-lg transition text-cyan-900">
+    <div className="flex flex-col items-center justify-center p-5 bg-white rounded-2xl shadow hover:-translate-y-1 hover:shadow-lg transition text-cyan-900">
       <div className="w-16 h-16 flex items-center justify-center mb-3">
         <Image
           src={image}
