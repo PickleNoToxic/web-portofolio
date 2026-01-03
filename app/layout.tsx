@@ -3,7 +3,7 @@ import Sidebar from "@/app/components/Sidebar"
 import Footer from "@/app/components/Footer"
 
 export const metadata = {
-  title: "Web Framework Deployment",
+  title: "Matthew Kevin",
 }
 
 export default function RootLayout({

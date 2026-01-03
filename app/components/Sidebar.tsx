@@ -32,7 +32,7 @@ export default function Sidebar() {
         <div className="space-y-6 my-5">
           <div className="space-y-3">
             <Image
-              src="/images/foto.jpeg"
+              src="/images/foto.jpg"
               alt="Avatar user"
               width={128}
               height={128}
@@ -99,7 +99,7 @@ function SidebarLink({
   return (
     <Link
       href={href}
-      className={`flex items-center text-sm font-medium py-2 px-2 rounded-md transition
+      className={`flex items-center text-sm font-medium py-2 px-2 rounded-md transition hover:scale-105
         ${
           active
             ? "bg-cyan-900 text-white"

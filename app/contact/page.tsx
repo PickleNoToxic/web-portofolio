@@ -18,51 +18,76 @@ export default function ContactPage() {
           Feel <b>free</b> to contact me!
         </p>
 
-        <p className="text-white mt-3">
-          Feel free to <b>reach out </b>to me <b>anytime</b> through any of the contact
-          options provided below. I’m always happy to connect and will do my
-          best to respond as quickly as possible. Apologies in advance if my
-          response is a bit slow. Here is my contact information for your
+        <p className="text-white text-justify mt-3">
+          Feel free to <b>reach out </b>to me <b>anytime</b> through any of the
+          contact options provided below. I’m always happy to connect and will
+          do my best to respond as quickly as possible. Apologies in advance if
+          my response is a bit slow. Here is my contact information for your
           convenience.
         </p>
 
         {/* Contact List */}
-        <div className="my-10 px-6 space-y-3">
-          <div className="flex items-center">
-            <Phone className="w-5 h-5 md:w-10 md:h-10 text-white" />
-            <a
-              href="https://wa.me/6282244413825"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white ml-3 text-base hover:underline md:text-2xl"
-            >
-              +62 822-4441-3825
-            </a>
-          </div>
+        <div className="my-10 grid gap-5 md:grid-cols-2">
+          {/* WHATSAPP */}
+          <a
+            href="https://wa.me/6282244413825"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center p-5 rounded-2xl border border-white/30 hover:bg-white/10 transition"
+          >
+            <div className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-xl bg-white/10">
+              <Phone className="w-6 h-6 md:w-8 md:h-8 text-white" />
+            </div>
 
-          <div className="flex items-center">
-            <Mail className="w-5 h-5 md:w-10 md:h-10 text-white" />
-            <a
-              href="mailto:matthew.kevin03@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white ml-3 text-base hover:underline md:text-2xl"
-            >
-              matthew.kevin03@gmail.com
-            </a>
-          </div>
+            <div className="ml-4">
+              <h3 className="text-white font-semibold text-lg md:text-xl">
+                WhatsApp
+              </h3>
+              <p className="text-white/80 text-sm md:text-base">
+                +62 822-4441-3825
+              </p>
+            </div>
+          </a>
 
-          <div className="flex items-center">
-            <Linkedin className="w-5 h-5 md:w-10 md:h-10 text-white" />
-            <a
-              href="https://www.linkedin.com/in/matthew-kevin"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white ml-3 text-base hover:underline md:text-2xl"
-            >
-              www.linkedin.com/in/matthew-kevin
-            </a>
-          </div>
+          {/* EMAIL */}
+          <a
+            href="mailto:matthew.kevin03@gmail.com"
+            className="flex items-center p-5 rounded-2xl border border-white/30 hover:bg-white/10 transition"
+          >
+            <div className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-xl bg-white/10">
+              <Mail className="w-6 h-6 md:w-8 md:h-8 text-white" />
+            </div>
+
+            <div className="ml-4">
+              <h3 className="text-white font-semibold text-lg md:text-xl">
+                Email
+              </h3>
+              <p className="text-white/80 text-sm md:text-base">
+                matthew.kevin03@gmail.com
+              </p>
+            </div>
+          </a>
+
+          {/* LINKEDIN */}
+          <a
+            href="https://www.linkedin.com/in/matthew-kevin"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center p-5 rounded-2xl border border-white/30 hover:bg-white/10 transition md:col-span-2"
+          >
+            <div className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-xl bg-white/10">
+              <Linkedin className="w-6 h-6 md:w-8 md:h-8 text-white" />
+            </div>
+
+            <div className="ml-4">
+              <h3 className="text-white font-semibold text-lg md:text-xl">
+                LinkedIn
+              </h3>
+              <p className="text-white/80 text-sm md:text-base">
+                linkedin.com/in/matthew-kevin
+              </p>
+            </div>
+          </a>
         </div>
       </div>
     </div>
