@@ -1,6 +1,7 @@
 import "./globals.css"
 import Sidebar from "@/app/components/Sidebar"
 import Footer from "@/app/components/Footer"
+import BackToTop from "@/app/components/BackToTop"
 
 export const metadata = {
   title: "Matthew Kevin",
@@ -20,6 +21,8 @@ export default function RootLayout({
           <div className="flex flex-col flex-grow">
             <div className="container p-8 flex-grow">
               {children}
+
+              <BackToTop />
             </div>
 
             <Footer />
