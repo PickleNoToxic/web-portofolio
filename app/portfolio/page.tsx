@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   MonitorSmartphone,
   Paintbrush,
@@ -32,26 +32,27 @@ export default function PortfolioPage() {
       shortDesc:
         "A cloud-based concert ticket booking web application built on AWS, designed for scalability and high availability using Elastic Load Balancer, Auto Scaling, and serverless reporting with AWS Lambda.",
       fullDesc:
-        "In this project, I developed a cloud-based concert ticket booking website using AWS infrastructure to ensure scalability and high availability. The system was designed to handle high traffic by implementing AWS Elastic Load Balancer and Auto Scaling, allowing it to automatically adapt to traffic spikes during peak demand periods. I also utilized AWS Lambda functions to generate automated monthly transaction and sales reports, improving operational efficiency. For data and asset management, Amazon S3 was integrated to securely store static assets and report files, while Amazon RDS was used for reliable relational database management. Overall, the system architecture was carefully designed to be scalable, fault-tolerant, and cost-efficient, making it suitable for real-world production environments."
+        "In this project, I developed a cloud-based concert ticket booking website using AWS infrastructure to ensure scalability and high availability. The system was designed to handle high traffic by implementing AWS Elastic Load Balancer and Auto Scaling, allowing it to automatically adapt to traffic spikes during peak demand periods. I also utilized AWS Lambda functions to generate automated monthly transaction and sales reports, improving operational efficiency. For data and asset management, Amazon S3 was integrated to securely store static assets and report files, while Amazon RDS was used for reliable relational database management. Overall, the system architecture was carefully designed to be scalable, fault-tolerant, and cost-efficient, making it suitable for real-world production environments.",
     },
   ];
 
   const aiProjects: Project[] = [
     {
       image: "/images/thesis.png",
-      title: "Stock Investment Recommendation System for Danantara-Affiliated Companies",
+      title:
+        "Stock Investment Recommendation System for Danantara-Affiliated Companies",
       tech: ["LARAVEL", "PYTHON", "DEEP LEARNING"],
       shortDesc:
-      "A stock investment recommendation system that uses LSTM-based time-series prediction to generate buy, hold, and sell signals.",
+        "A stock investment recommendation system that uses LSTM-based time-series prediction to generate buy, hold, and sell signals.",
       fullDesc:
-      "This project is my undergraduate thesis, where I developed a system that provides buy, hold, and sell investment recommendations to users based on stock price predictions generated using a Long Short-Term Memory (LSTM) model. The system aims to assist users in making more informed investment decisions by leveraging time-series prediction techniques."
+        "This project is my undergraduate thesis, where I developed a system that provides buy, hold, and sell investment recommendations to users based on stock price predictions generated using a Long Short-Term Memory (LSTM) model. The system aims to assist users in making more informed investment decisions by leveraging time-series prediction techniques.",
     },
     {
       image: "/images/delivery.jpg",
       title: "Swarm Intelligence for Optimizing Goods Delivery Schedule",
       tech: ["PYTHON"],
       shortDesc:
-      "A logistics optimization system that applies swarm intelligence algorithms, including Particle Swarm Optimization (PSO) and Ant Colony Optimization (ACO), to optimize delivery routes and cargo management.",
+        "A logistics optimization system that applies swarm intelligence algorithms, including Particle Swarm Optimization (PSO) and Ant Colony Optimization (ACO), to optimize delivery routes and cargo management.",
       fullDesc:
         "In this project, I utilized swarm intelligence algorithms such as PSO (Particle Swarm Optimization) and ACO (Ant Colony Optimization) to develop a delivery system for a logistics company. The goal of this system is to optimize route selection and cargo management to maximize profits.",
     },
@@ -231,6 +232,18 @@ function SectionTitle({
 
 function ProjectCard({ project }: { project: Project }) {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   return (
     <>
