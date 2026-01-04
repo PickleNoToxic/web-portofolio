@@ -98,7 +98,7 @@ export default function ResumePage() {
                 1
               </div>
               <p className="leading-relaxed">
-                Developed <b>CustomerHub</b>, a <b>customer relationship management system</b>
+                Developed <b>CustomerHub</b>, a <b>customer relationship management system </b>
                 used by 50+ active users to streamline customer interactions and
                 data management.
               </p>
