@@ -27,7 +27,7 @@ export default function BackToTop() {
       onClick={scrollToTop}
       aria-label="Back to top"
       className={`
-        fixed bottom-6 right-6 z-50 p-3 rounded-full
+        fixed bottom-6 right-6 z-40 p-3 rounded-full
         bg-white text-cyan-900 shadow-lg
         hover:bg-cyan-900 hover:text-white
         transition-all duration-300 ease-out cursor-pointer
