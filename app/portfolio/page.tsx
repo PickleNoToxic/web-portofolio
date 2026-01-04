@@ -232,6 +232,17 @@ function SectionTitle({
 
 function ProjectCard({ project }: { project: Project }) {
   const [open, setOpen] = useState(false);
+  const [visible, setVisible] = useState(false);
+
+  const openModal = () => {
+    setVisible(true);
+    setTimeout(() => setOpen(true), 10);
+  };
+
+  const closeModal = () => {
+    setOpen(false);
+    setTimeout(() => setVisible(false), 300);
+  };
 
   useEffect(() => {
     if (open) {
@@ -278,7 +289,7 @@ function ProjectCard({ project }: { project: Project }) {
 
           {/* CTA */}
           <button
-            onClick={() => setOpen(true)}
+            onClick={() => openModal()}
             className="mt-auto bg-white text-cyan-900 font-bold py-2 rounded-lg hover:opacity-90 transition cursor-pointer"
           >
             See Detail
@@ -287,19 +298,33 @@ function ProjectCard({ project }: { project: Project }) {
       </div>
 
       {/* MODAL */}
-      {open && (
-        <div className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center px-3 md:px-6">
+      {visible && (
+        <div
+          className={`
+            fixed inset-0 z-50
+            flex items-center justify-center
+            px-3 md:px-6
+            transition-opacity duration-200
+            ${open ? "bg-black/70 opacity-100" : "bg-black/0 opacity-0"}
+          `}
+        >
           {/* MODAL CARD */}
           <div
-            className="
+            onClick={(e) => e.stopPropagation()}
+            className={`
               bg-cyan-900
               w-full md:max-w-2xl
               rounded-2xl
               shadow-xl
               max-h-[90vh]
               flex flex-col
-              animate-slideUp
-            "
+              transition-all duration-200 ease-out
+              ${
+                open
+                  ? "opacity-100 scale-100 translate-y-0"
+                  : "opacity-0 scale-95 translate-y-6"
+              }
+            `}
           >
             {/* HEADER */}
             <div className="flex justify-between items-center p-4 border-b border-white/20">
@@ -307,7 +332,7 @@ function ProjectCard({ project }: { project: Project }) {
                 {project.title}
               </h3>
               <button
-                onClick={() => setOpen(false)}
+                onClick={() => closeModal()}
                 className="p-1.5 rounded-full transition hover:bg-white/90 group cursor-pointer
                 "
               >
