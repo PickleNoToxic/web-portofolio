@@ -4,7 +4,14 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { Home, GraduationCap, FileText, Briefcase, Mail } from "lucide-react";
+import {
+  Home,
+  GraduationCap,
+  FileText,
+  Briefcase,
+  Mail,
+  Download,
+} from "lucide-react";
 
 export default function Sidebar() {
   const [open, setOpen] = useState(false);
@@ -79,6 +86,26 @@ export default function Sidebar() {
             icon={Mail}
             active={pathname === "/contact"}
           />
+          {/* DOWNLOAD CV */}
+          <div className="mt-6 px-2">
+            <a
+              href="/cv/Matthew_Kevin_CV.pdf"
+              download
+              className="
+                flex items-center justify-center gap-2
+                w-full py-2.5
+                rounded-md
+                bg-cyan-900 text-white
+                font-semibold text-sm
+                transition
+                hover:bg-cyan-800 hover:scale-105
+                shadow-sm
+              "
+            >
+              <Download className="w-4 h-4" />
+              Download CV
+            </a>
+          </div>
         </div>
       </nav>
     </div>
@@ -112,4 +139,3 @@ function SidebarLink({
     </Link>
   );
 }
-
