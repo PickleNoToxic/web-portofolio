@@ -26,6 +26,15 @@ export default function PortfolioPage() {
   const [activeFilter, setActiveFilter] = useState<FilterType>("ALL");
   const fullStackProjects: Project[] = [
     {
+      image: "/images/recipehub.jpg",
+      title: "RecipeHub",
+      tech: ["FLUTTER", "FIREBASE"],
+      shortDesc:
+        "A mobile application for sharing and discovering recipes among users, built with Flutter and Firebase, featuring cloud storage for images and daily push notifications for popular recipes.",
+      fullDesc:
+        "In this project, I developed a mobile application for sharing and discovering recipes using Flutter and Firebase. The application allows users to create accounts, upload and explore recipes, and store recipe images securely in cloud storage buckets. Firebase was used to manage user data and recipe content, ensuring real-time synchronization across devices. To increase user engagement, I implemented daily push notifications that inform all users about the most popular recipes from the previous day, encouraging consistent interaction with the platform."
+    },
+    {
       image: "/images/vibetix.jpg",
       title: "VibeTix",
       tech: ["AWS", "LARAVEL"],

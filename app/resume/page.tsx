@@ -51,8 +51,8 @@ export default function ResumePage() {
             July 2022 - Present
           </time>
           <p className="text-base font-normal text-white text-justify">
-            I am currently pursuing a <b>degree in Informatics</b> at Petra
-            Christian University, where I have gained a comprehensive education
+            I have recently graduated from <b>Petra Christian University</b> with a <b>degree in Informatics</b>, 
+            where I have gained a comprehensive education
             in both technical and non-technical aspects. Throughout my studies,
             I have explored <b>various areas</b> of computer science. Over
             time, my academic and project experiences have led me to develop a
