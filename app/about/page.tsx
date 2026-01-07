@@ -1,4 +1,12 @@
-import { Laptop, UsersRound, Wrench } from "lucide-react"
+import {
+  Monitor,
+  Smartphone,
+  Server,
+  Bot,
+  UsersRound,
+  Wrench,
+  Laptop,
+} from "lucide-react";
 
 export default function AboutPage() {
   return (
@@ -11,67 +19,159 @@ export default function AboutPage() {
       </div>
 
       {/* TECHNICAL SKILLS */}
-      <h1 className="flex items-center gap-2 text-3xl text-white font-bold md:text-4xl mt-6 mb-3">
+      <h2 className="flex items-center gap-3 text-3xl text-white font-bold md:text-4xl mb-6">
         TECHNICAL SKILLS
-        <Wrench className="w-10 h-10 ml-2" />
-      </h1>
+        <Wrench className="w-9 h-9" />
+      </h2>
 
-      <SkillBar label="Web Development" percent={95} />
-      <SkillBar label="Mobile App Development" percent={85} />
-      <SkillBar label="Database Management" percent={85} />
-      <SkillBar label="Applied Artificial Intelligence" percent={75} />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <SkillCard
+          title="Web Development"
+          icon={Monitor}
+          items={["Laravel", "Next.js", "React", "Tailwind CSS"]}
+        />
+        <SkillCard
+          title="Mobile App Development"
+          icon={Smartphone}
+          items={["Flutter", "Dart", "Kotlin"]}
+        />
+        <SkillCard
+          title="Backend & Cloud"
+          icon={Server}
+          items={["MySQL", "AWS", "Firebase"]}
+        />
+        <SkillCard
+          title="Applied Artificial Intelligence"
+          icon={Bot}
+          items={["Python", "Time Series Forecasting", "LSTM"]}
+        />
+      </div>
 
       <hr className="my-6 border-white" />
 
       {/* SOFT SKILLS */}
-      <h1 className="flex items-center gap-2 text-3xl text-white font-bold md:text-4xl mt-6 mb-3">
+      <h2 className="flex items-center gap-3 text-3xl text-white font-bold md:text-4xl mb-6">
         SOFT SKILLS
-        <UsersRound className="w-10 h-10 ml-2" />
-      </h1>
+        <UsersRound className="w-9 h-9" />
+      </h2>
 
-      <SkillBar label="Problem Solving" percent={95} />
-      <SkillBar label="Critical Thinking" percent={90} />
-      <SkillBar label="Teamwork" percent={95} />
-      <SkillBar label="Leadership" percent={80} />
-      <SkillBar label="Time Management" percent={90} />
-      <SkillBar label="Communication" percent={80} />
+      <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-white">
+        <SoftSkill
+          title="Problem Solving"
+          desc="Able to analyze problems and propose effective technical solutions."
+        />
+        <SoftSkill
+          title="Critical Thinking"
+          desc="Skilled in evaluating multiple approaches before making decisions."
+        />
+        <SoftSkill
+          title="Teamwork"
+          desc="Experienced in collaborating within team-based development projects."
+        />
+        <SoftSkill
+          title="Leadership"
+          desc="Capable of taking initiative and guiding teams toward shared goals."
+        />
+        <SoftSkill
+          title="Time Management"
+          desc="Able to manage priorities and meet project deadlines effectively."
+        />
+        <SoftSkill
+          title="Communication"
+          desc="Comfortable communicating technical ideas clearly and effectively."
+        />
+      </ul>
 
       <hr className="my-6 border-white" />
 
-      {/* DIGITAL SKILLS */}
-      <h1 className="flex items-center gap-2 text-3xl text-white font-bold md:text-4xl mt-6 mb-3">
-        DIGITAL SKILLS
-        <Laptop className="w-10 h-10 ml-2" />
-      </h1>
+      {/* ADDITIONAL SKILLS */}
+      <h2 className="flex items-center gap-3 text-3xl text-white font-bold md:text-4xl mb-6">
+        ADDITIONAL SKILLS
+        <Laptop className="w-9 h-9" />
+      </h2>
 
-      <SkillBar label="Microsoft Word" percent={85} />
-      <SkillBar label="Canva & PowerPoint" percent={95} />
-      <SkillBar label="Microsoft Excel" percent={75} />
-      <SkillBar label="Figma" percent={80} />
+      <div className="flex flex-wrap gap-3">
+        {[
+          "Microsoft Word",
+          "Microsoft Excel",
+          "Canva",
+          "PowerPoint",
+          "Figma",
+        ].map((skill) => (
+          <span
+            key={skill}
+            className="
+              border border-white/50
+              text-white
+              px-4
+              py-1.5
+              rounded-full
+              text-sm
+              font-medium
+            "
+          >
+            {skill}
+          </span>
+        ))}
+      </div>
     </>
-  )
+  );
 }
 
-function SkillBar({
-  label,
-  percent,
+function SkillCard({
+  title,
+  items,
+  icon: Icon,
 }: {
-  label: string
-  percent: number
+  title: string;
+  items: string[];
+  icon: any;
 }) {
   return (
-    <>
-      <div className="flex justify-between mb-1">
-        <span className="text-base font-medium text-white">{label}</span>
-        <span className="text-sm font-medium text-white">{percent}%</span>
+    <div
+      className="
+        bg-cyan-900
+        border border-white/50
+        rounded-2xl
+        p-6
+        shadow-md
+        hover:shadow-xl
+        hover:-translate-y-1
+        transition-all
+      "
+    >
+      <div className="flex items-center gap-3 mb-4">
+        <Icon className="w-7 h-7 text-white" />
+        <h3 className="text-xl font-bold text-white">{title}</h3>
       </div>
 
-      <div className="w-full bg-cyan-900 rounded-full h-3.5 mb-3 border-2 border-white">
-        <div
-          className="bg-white h-2.5 rounded-full border-2 border-cyan-900"
-          style={{ width: `${percent}%` }}
-        />
+      <div className="flex flex-wrap gap-2">
+        {items.map((item, i) => (
+          <span
+            key={i}
+            className="bg-white text-cyan-900 text-xs font-bold px-3 py-1 rounded-full"
+          >
+            {item}
+          </span>
+        ))}
       </div>
-    </>
-  )
+    </div>
+  );
+}
+
+function SoftSkill({ title, desc }: { title: string; desc: string }) {
+  return (
+    <li className="
+      bg-cyan-900
+      border border-white/50
+      rounded-xl
+      p-5
+      shadow-sm
+      hover:shadow-md
+      transition
+    ">
+      <h4 className="font-bold mb-1">{title}</h4>
+      <p className="text-sm text-white/90">{desc}</p>
+    </li>
+  );
 }
